@@ -91,9 +91,9 @@ void drawWheel(float radius) {
     glEnd();
 }
 
-// Fungsi untuk menggambar body utama mobil - lebih natural
+// Fungsi untuk menggambar body utama mobil 
 void drawMainBody() {
-    // Body utama merah dengan bentuk yang lebih natural
+    // Body utama merah
     glColor3f(0.9f, 0.2f, 0.1f);
     glBegin(GL_POLYGON);
         // Bagian bawah
@@ -109,7 +109,7 @@ void drawMainBody() {
         glVertex2f(-0.5f, 0.2f);   // Belakang atas
     glEnd();
     
-    // Tambahan body bagian belakang untuk membuat lebih natural
+    // Tambahan body bagian belakang 
     glBegin(GL_POLYGON);
         glVertex2f(-0.5f, -0.1f);  // Belakang bawah
         glVertex2f(-0.5f, 0.2f);   // Belakang atas
@@ -132,7 +132,7 @@ void drawMainBody() {
         glVertex2f(0.35f, -0.05f);
     glEnd();
     
-    // Garis pemisah pintu - bagian vertikal
+    // Garis pemisah pintu
     glColor3f(0.1f, 0.1f, 0.1f);
     glLineWidth(2.0f);
     glBegin(GL_LINES);
@@ -171,7 +171,6 @@ void drawMainBody() {
         glVertex2f(0.13f, -0.03f);
     glEnd();
     
-    // TAMBAHAN: Motif untuk body bagian depan
     // Grille depan
     glColor3f(0.2f, 0.2f, 0.2f);
     glBegin(GL_POLYGON);
@@ -192,7 +191,6 @@ void drawMainBody() {
     }
     glEnd();
     
-    // TAMBAHAN: Motif untuk body bagian belakang
     // Lampu belakang
     glColor3f(0.7f, 0.1f, 0.1f);
     glBegin(GL_POLYGON);
@@ -235,7 +233,6 @@ void drawTopCabin() {
         glVertex2f(-0.30f, 0.44f); // Belakang atas
     glEnd();
     
-    // Plat besi berdiri menghubungkan kedua trapesium (vertikal tiang depan)
     glLineWidth(10.0f);
     glBegin(GL_LINES);
         // Tiang depan
@@ -269,7 +266,7 @@ void drawWindshield() {
     glEnd();
 }
 
-// Fungsi untuk menggambar roll bar - DIUBAH AGAR GARIS MIRING KE KIRI SAMPAI UJUNG TRAPESIUM
+// Fungsi untuk menggambar roll bar
 void drawRollBar() {
     glLineWidth(3.5f);
     glColor3f(0.1f, 0.1f, 0.1f);
@@ -282,22 +279,22 @@ void drawRollBar() {
         glVertex2f(0.18f, 0.5f);   // Depan kanan
     glEnd();
     
-    // Garis miring pertama - DIUBAH ke ujung trapesium luar sebelah kiri atas
+    // Garis miring pertama
     glLineWidth(15.0f);
     glBegin(GL_LINES);
         glVertex2f(-0.4f, 0.5f);    // Titik awal di pojok kiri atas trapesium luar
-        glVertex2f(-0.2f, 0.2f);    // Titik akhir di bawah (tetap sama)
+        glVertex2f(-0.2f, 0.2f);    // Titik akhir di bawah
     glEnd();
 
-    // Garis miring kedua - DIUBAH ke ujung trapesium luar sebelah kiri atas
+    // Garis miring kedua 
     glLineWidth(15.0f);
     glBegin(GL_LINES);
         glVertex2f(-0.4f, 0.5f);    // Titik awal di pojok kiri atas trapesium luar
-        glVertex2f(-0.30f, 0.43f);  // Titik akhir (dirapikan)
+        glVertex2f(-0.30f, 0.43f);  // Titik akhir 
     glEnd();
 }
 
-// Fungsi untuk menggambar lampu (modifikasi dari kemudi)
+// Fungsi untuk menggambar lampu
 void drawLights() {
     // Lingkaran utama (lampu depan)
     glColor3f(0.3f, 0.3f, 0.3f);
@@ -306,14 +303,14 @@ void drawLights() {
         drawFilledCircle(0.05f, 100);
     glPopMatrix();
     
-    // Lingkaran putih di ujung kanan (lampu tambahan)
+    // Lingkaran putih di ujung kanan 
     glColor3f(1.0f, 1.0f, 1.0f);
     glPushMatrix();
         glTranslatef(0.23f, 0.52f, 0.0f);
         drawFilledCircle(0.04f, 100);
     glPopMatrix();
     
-    // Persegi panjang di kiri lingkaran (rangka lampu)
+    // Persegi panjang di kiri lingkaran 
     glColor3f(0.2f, 0.2f, 0.2f);
     glBegin(GL_POLYGON);
         glVertex2f(0.05f, 0.50f);
@@ -363,7 +360,7 @@ void drawWheelArches() {
     glEnd();
 }
 
-// Fungsi untuk menggambar knalpot - DIUBAH UKURANNYA MENJADI LEBIH BESAR DAN DITAMBAH KOTAK DI UJUNG
+// Fungsi untuk menggambar knalpot 
 void drawExhaust() {
     // Warna knalpot putih
     glColor3f(1.0f, 1.0f, 1.0f);
@@ -422,7 +419,6 @@ void drawExhaust() {
     glPopMatrix();
 }
 
-// TAMBAHAN: Fungsi untuk menggambar foot step seperti pada gambar contoh
 void drawFootStep() {
     glColor3f(0.7f, 0.7f, 0.7f);
     glBegin(GL_POLYGON);
@@ -475,10 +471,8 @@ void drawJeep() {
         drawWheel(0.15f);
     glPopMatrix();
     
-    // TAMBAHAN: Foot step
     drawFootStep();
     
-    // Body utama yang lebih natural
     drawMainBody();
     
     // Bagian atas trapesium (transparan)
@@ -496,7 +490,6 @@ void drawJeep() {
         drawExhaust();
     glPopMatrix();
     
-    // Lampu (menggantikan kemudi)
     drawLights();
     
     glFlush();
@@ -508,7 +501,6 @@ int main(int argc, char* argv[]) {
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutCreateWindow("Jeep in Desert");
     
-    // Background sudah diganti oleh fungsi drawDesertBackground()
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     gluOrtho2D(-1.0, 1.0, -1.0, 1.0);
