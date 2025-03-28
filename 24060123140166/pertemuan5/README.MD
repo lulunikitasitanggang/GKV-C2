@@ -9,5 +9,7 @@ Objek berputar terhadap sumbu-y dan sumbu-x. Setiap penekanan tombol memicu peru
 
 Pengaturan Keyboard:
 -Tombol 'w' dan 's' digunakan untuk mengubah rotasi sumbu-y (naik/turun).
+
 -Tombol 'd' dan 'a' digunakan untuk mengubah rotasi sumbu-x (naik/turun).
+
 -Tombol 'q' digunakan untuk keluar dari program.
