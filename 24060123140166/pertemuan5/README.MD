@@ -8,6 +8,7 @@ Rotasi:
 Objek berputar terhadap sumbu-y dan sumbu-x. Setiap penekanan tombol memicu perubahan sudut rotasi sebesar 10 derajat.
 
 Pengaturan Keyboard:
+
 -Tombol 'w' dan 's' digunakan untuk mengubah rotasi sumbu-y (naik/turun).
 
 -Tombol 'd' dan 'a' digunakan untuk mengubah rotasi sumbu-x (naik/turun).
